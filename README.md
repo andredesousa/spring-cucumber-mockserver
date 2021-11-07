@@ -81,6 +81,12 @@ As with unit tests, you can exclude or focus on some tests.
 You can exclude features ou scenarios with the `@Ignore` tag or run specific features or scenarios with the `@Focus` tag.
 In the case of focused tests, you need to use `./gradlew functionalTest -Dfocus=true` command.
 
+## Debugging
+
+You can debug the source code, add breakpoints, inspect variables and view the application's call stack.
+Also, you can use the IDE for debugging the source code, unit and functional tests.
+You can customize the [log verbosity](https://docs.gradle.org/current/userguide/logging.html#logging) of gradle tasks using the `-i` or `--info` flag.
+
 ## Reference Documentation
 
 For further reference, please consider the following sections:

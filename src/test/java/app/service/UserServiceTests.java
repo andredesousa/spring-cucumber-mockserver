@@ -43,7 +43,7 @@ public class UserServiceTests {
     }
 
     @Test
-    @DisplayName("#findById returns an user")
+    @DisplayName("#findById returns a user")
     void findById() {
         UserDto user = new UserDto();
         ResponseEntity<UserDto> response = new ResponseEntity<UserDto>(user, HttpStatus.OK);
@@ -66,9 +66,9 @@ public class UserServiceTests {
     @DisplayName("#update calls api #put method")
     void updateUser() {
         UserDto user = new UserDto();
-        userService.update(user);
+        userService.update(1, user);
 
-        verify(api).put("localhost/user/", user, UserDto.class);
+        verify(api).put("localhost/user/1", user);
     }
 
     @Test

@@ -1,0 +1,8 @@
+{
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "cucumberautocomplete.steps": [
+        "src/functionalTest/java/**/*StepDefinitions.java",
+    ],
+    "cucumberautocomplete.syncfeatures": "src/functionalTest/resources/**/*feature",
+    "cucumberautocomplete.strictGherkinCompletion": true,
+}

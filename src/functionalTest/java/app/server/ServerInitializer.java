@@ -16,7 +16,7 @@ public class ServerInitializer {
 
     @Bean
     public ClientAndServer startMockServer() {
-        ConfigurationProperties.logLevel("OFF");
+        ConfigurationProperties.logLevel("WARN");
 
         return startClientAndServer(port);
     }

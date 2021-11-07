@@ -47,8 +47,8 @@ public class UserService {
      * Updates a user.
      * @param user - The user to update.
      */
-    public void update(UserDto user) {
-        api.put(address + resource, user, UserDto.class);
+    public void update(Integer id, UserDto user) {
+        api.put(address + resource + id, user);
     }
 
     /**

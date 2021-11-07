@@ -33,7 +33,7 @@ public class UserControllerTests {
     }
 
     @Test
-    @DisplayName("#findById returns an user")
+    @DisplayName("#findById returns a user")
     void findById() {
         UserDto user = new UserDto();
         when(userService.findById(1)).thenReturn(user);
@@ -54,9 +54,9 @@ public class UserControllerTests {
     @DisplayName("#update calls service #update method")
     void updateUser() {
         UserDto user = new UserDto();
-        userController.update(user);
+        userController.update(1, user);
 
-        verify(userService).update(user);
+        verify(userService).update(1, user);
     }
 
     @Test
