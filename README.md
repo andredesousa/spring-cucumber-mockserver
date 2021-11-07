@@ -8,7 +8,7 @@ This project template uses [Cucumber](https://cucumber.io/) and [MockServer](htt
 
 [Cucumber](https://cucumber.io/) is a *Behavioral Driven Development* (BDD) testing framework.
 Cucumber uses [Gherkin](https://cucumber.io/docs/gherkin/reference/), a set of special keywords to give structure and meaning to executable specifications.
-In Cucumber, whatever you write must go into *Given-When-Then* steps. Lets consider the same example above:
+In Cucumber, whatever you write must go into *Given-When-Then* steps. Lets consider the next example:
 
 ```gherkin
 Feature: Is it Friday yet?
@@ -19,7 +19,7 @@ Feature: Is it Friday yet?
     Then I should be told "Nope"
 ```
 
-The first line starts with the keyword `Feature: followed by a name`.
+The first line starts with the keyword `Feature` followed by a description.
 The third line, `Scenario: Sunday isn't Friday` is a scenario, which is a concrete example illustrating how the software should behave.
 The last three lines starting with `Given`, `When` and `Then` are the steps of our scenario. This is what Cucumber will execute.
 
