@@ -1,0 +1,81 @@
+plugins {
+	id 'org.springframework.boot' version '2.5.6'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'jacoco'
+	id 'java'
+}
+
+group = 'cucumber'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+sourceSets {
+    functionalTest {
+        compileClasspath += main.output
+        runtimeClasspath += main.output
+    }
+}
+
+configurations {
+    cucumberRuntime {
+        extendsFrom functionalTestImplementation
+    }
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.mock-server:mockserver-junit-jupiter:5.11.2'
+    testImplementation 'org.junit.platform:junit-platform-suite-api:1.8.1'
+    testImplementation 'io.cucumber:cucumber-java:6.11.0'
+    testImplementation 'io.cucumber:cucumber-junit:6.11.0'
+    testImplementation 'io.cucumber:cucumber-junit-platform-engine:6.11.0'
+    testImplementation 'io.cucumber:cucumber-spring:6.11.0'
+
+    functionalTestImplementation sourceSets.main.runtimeClasspath
+    functionalTestImplementation sourceSets.test.runtimeClasspath
+}
+
+jacoco {
+    toolVersion = '0.8.7'
+}
+
+jacocoTestReport {
+    dependsOn test
+    finalizedBy jacocoTestCoverageVerification
+}
+
+jacocoTestCoverageVerification {
+    dependsOn test
+    violationRules {
+        rule {
+            limit {
+                minimum = 0.8
+            }
+        }
+    }
+}
+
+test {
+    finalizedBy jacocoTestReport
+	useJUnitPlatform()
+    testLogging {
+        exceptionFormat = 'full'
+    }
+}
+
+task functionalTest(type: Test) {
+    description = 'Runs the functional tests.'
+    group = 'Verification'
+    useJUnitPlatform()
+    systemProperties = ["cucumber.filter.tags": System.getProperty("focused")?.toBoolean() ? "@Focus" : "not @Ignore"]
+    classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.functionalTest.output
+    testClassesDirs = sourceSets.functionalTest.output.classesDirs
+    testLogging {
+        exceptionFormat = 'full'
+    }
+}
