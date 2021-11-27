@@ -9,8 +9,7 @@
             "name": "Debug Application",
             "request": "launch",
             "mainClass": "app.Application",
-            "projectName": "app",
-            "envFile": "${workspaceFolder}/gradle.properties"
+            "projectName": "app"
         }
     ]
 }

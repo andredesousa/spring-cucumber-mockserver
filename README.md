@@ -49,6 +49,8 @@ For more details, read the [Command-Line Interface](https://docs.gradle.org/curr
 
 ## Running unit tests
 
+Unit tests are responsible for testing of individual methods or classes by supplying input and making sure the output is as expected.
+
 Use `./gradlew test` to execute the unit tests via [JUnit 5](https://junit.org/junit5/), [Mockito](https://site.mockito.org/) and [AssertJ](https://assertj.github.io/doc/).
 Use `./gradlew test -t` to keep executing unit tests in real time while watching for file changes in the background.
 You can see the HTML report opening the [index.html](build/reports/tests/test/index.html) file in your web browser.
