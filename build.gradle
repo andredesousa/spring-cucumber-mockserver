@@ -27,6 +27,7 @@ configurations {
 }
 
 dependencies {
+    implementation 'org.springdoc:springdoc-openapi-ui:1.5.13'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.mock-server:mockserver-junit-jupiter:5.11.2'

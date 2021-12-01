@@ -89,6 +89,8 @@ You can debug the source code, add breakpoints, inspect variables and view the a
 Also, you can use the IDE for debugging the source code, unit and functional tests.
 You can customize the [log verbosity](https://docs.gradle.org/current/userguide/logging.html#logging) of gradle tasks using the `-i` or `--info` flag.
 
+This project includes [Swagger](https://swagger.io/). To get a visual representation of the interface and send requests for testing purposes go to <http://localhost:8080/swagger-ui.html>.
+
 ## Reference Documentation
 
 For further reference, please consider the following sections:
@@ -96,6 +98,8 @@ For further reference, please consider the following sections:
 - [Official Gradle documentation](https://docs.gradle.org)
 - [Spring Boot Gradle Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.5.6/gradle-plugin/reference/html/)
 - [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-- [Building REST services with Spring](https://spring.io/guides/tutorials/bookmarks/)
+- [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
+- [REST with Spring Tutorial](https://www.baeldung.com/rest-with-spring-series)
+- [Setting Up Swagger 2 with a Spring REST API](https://www.baeldung.com/swagger-2-documentation-for-spring-rest-api)
 - [Cucumber 10 Minute Tutorial](https://cucumber.io/docs/guides/10-minute-tutorial/)
 - [How to Automate Tests for Spring Boot API using MockServer](https://medium.com/devtechtoday/how-to-automate-tests-for-spring-boot-api-using-mockserver-c6221ea8c549)
